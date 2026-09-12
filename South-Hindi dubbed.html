@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - filmyBanda</title>
+
+    <!-- SEO Tags for Google Search -->
+    <meta name="description" content="filmyBanda - Download latest South Indian hindi dubbed movies in 480p, 720p, and 1080p for free via Google Drive, Mega, and TeraBox.">
+    <meta name="keywords" content="filmybanda, movie download, free movies, bollywood movies, South hindi dubbed, terabox movies, 720p movies">
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        /* =========================================
+           1. BASIC SETUP & DARK THEME
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f0f0f; 
+            color: #ffffff; 
+            overflow-x: hidden; 
+        }
+
+        /* =========================================
+           2. SLIDING SIDEBAR (HAMBURGER MENU)
+           ========================================= */
+        .sidebar {
+            width: 260px;
+            background-color: #141414;
+            padding: 20px;
+            border-right: 1px solid #333;
+            position: fixed;
+            top: 0;
+            left: -260px; 
+            height: 100vh;
+            z-index: 1000;
+            transition: left 0.3s ease; 
+            overflow-y: auto;
+        }
+        
+        .sidebar.active { left: 0; }
+
+        .sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+
+        .logo { font-size: 1.5rem; color: #00bcd4; font-weight: bold; text-transform: uppercase; }
+
+        .close-btn { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .close-btn:hover { color: #D9272E; }
+
+        .menu-section { margin-bottom: 25px; }
+        .menu-section h3 { color: #888; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px; }
+        .menu-section ul { list-style: none; }
+        .menu-section ul li a {
+            color: #ccc; text-decoration: none; display: block; padding: 8px 10px; border-radius: 5px; font-size: 0.95rem; transition: all 0.3s ease;
+        }
+        .menu-section ul li a:hover { background-color: #333; color: #00bcd4; padding-left: 15px; }
+
+        /* =========================================
+           3. MAIN CONTENT, HEADER & BRANDING
+           ========================================= */
+        .main-content { padding: 20px 40px; width: 100%; }
+
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #222;
+            flex-wrap: wrap; /* Helps with mobile layout */
+        }
+
+        .header-left { display: flex; align-items: center; gap: 15px; }
+
+        .menu-toggle-btn { background: none; border: none; color: white; font-size: 2rem; cursor: pointer; transition: color 0.2s; }
+        .menu-toggle-btn:hover { color: #00bcd4; }
+
+        /* Clickable Brand Logo above Search Bar */
+        .main-logo {
+            font-size: 1.8rem;
+            color: #00bcd4;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .main-logo:hover { color: #ffffff; }
+
+        .search-bar {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: none;
+            background-color: #222;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+        .search-bar:focus { box-shadow: 0 0 10px rgba(0, 188, 212, 0.5); }
+
+        .page-title { font-size: 2rem; margin-bottom: 20px; color: #00bcd4; }
+
+        /* =========================================
+           4. MOVIE CARDS & GRID
+           ========================================= */
+        .movies-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; }
+
+        .movie-card { background-color: #1e1e1e; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); transition: transform 0.3s ease; }
+        .movie-card:hover { transform: translateY(-8px); }
+        .movie-card img { width: 100%; height: 300px; object-fit: cover; border-bottom: 3px solid #333; }
+        
+        .movie-info { padding: 15px; text-align: center; }
+        .movie-title { font-size: 1rem; margin-bottom: 5px; font-weight: bold; }
+        .movie-year { color: #888; font-size: 0.85rem; margin-bottom: 15px; }
+        
+        .download-links { display: flex; flex-direction: column; gap: 8px; }
+        .btn { text-decoration: none; color: white; padding: 8px 0; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: opacity 0.2s; }
+        .btn:hover { opacity: 0.8; }
+        
+        .btn-drive { background-color: #1FA463; }
+        .btn-mega { background-color: #D9272E; }
+        .btn-telegram { background-color: #0088cc; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .main-content { padding: 15px; }
+            .top-header { flex-direction: column; align-items: flex-start; }
+            .search-bar { max-width: 100%; margin-top: 10px; }
+        }
+    /* =========================================
+           7. Pagination Bar Styling
+           ========================================= */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        .page-btn {
+            background-color: #222;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border: 1px solid #333;
+        }
+        .page-btn:hover {
+            background-color: #00bcd4;
+            color: #000;
+        }
+        .page-active {
+            background-color: #00bcd4;
+            color: #000;
+            border: 1px solid #00bcd4;
+        }    
+    </style>
+</head>
+<body>
+
+    <!-- LEFT SIDEBAR MENU -->
+    <aside class="sidebar" id="sidebarMenu">
+        <div class="sidebar-header">
+            <div class="logo">🎬 filmyBanda</div>
+            <button class="close-btn" id="closeBtn">✖</button>
+        </div>
+
+        <div class="menu-section">
+            <h3>Main Menu</h3>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+            </ul>
+        </div>
+
+        <div class="menu-section">
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="hollywood.html">⭐ Hollywood Movies</a></li>
+                <li><a href="bollywood.html">⭐ Bollywood Movies</a></li>
+                <li><a href="dual-audio.html">⭐ Dual Audio</a></li>
+                <li><a href="web-series.html">⭐ Web Series</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <main class="main-content">
+        
+        <!-- Header with Hamburger Menu, Clickable Brand Logo, and Search Bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="menu-toggle-btn" id="menuToggleBtn">☰</button>
+                <!-- Clickable filmyBanda Home Link -->
+                <a href="index.html" class="main-logo">🎬 filmyBanda</a>
+            </div>
+            <input type="text" id="searchInput" class="search-bar" placeholder="Type movie name and press Enter...">
+        </header>
+
+        <!-- Current Page Title -->
+        <h1 class="page-title">🏠 Latest Homepage Updates</h1>
+
+        <!-- Movies Grid -->
+        <div class="movies-container">
+            
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/300x450/1a1a1a/ffffff?text=Avatar+3" alt="Poster">
+                <div class="movie-info">
+                    <div class="movie-title">Lenin</div>
+                    <div class="movie-year">2026 • Action/Romance/Drama</div>
+                    <div class="download-links">
+                        <a href="#" class="btn btn-drive" target="_blank">Google Drive</a>
+                        <a href="#" class="btn btn-mega" target="_blank">Mega.nz</a>
+                        <a href="#" class="btn btn-telegram" target="_blank">Terabox (480p)</a>
+                    </div>
+                </div>
+            </div>
+ 
+  <!-- New Movies Card -->           
+            <!-- PASTE YOUR NEW MOVIE CARD HERE -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/300x450/1a1a1a/ffffff?text=Stree+2" alt="Poster">
+                <div class="movie-info">
+                    <div class="movie-title">Captain America:The first Avenger</div>
+                    <div class="movie-year">2011 • Action/Sci-fi</div>
+                    <div class="download-links">
+                        <a href="https://drive.google.com/uc?export=download&id=12345" class="btn btn-drive" target="_blank">Google Drive</a>
+                        <a href="https://mega.nz/file/12345" class="btn btn-mega" target="_blank">Mega.nz</a>
+                        <a href="https://t.me/yourchannel/123" class="btn btn-telegram" target="_blank">Telegram</a>
+                    </div>
+                </div>
+            </div>                                                                                   
+        </div>
+    <!-- =========================================
+                 PAGINATION BAR (Page 1, 2, 3...)
+                 ========================================= -->
+            <div class="pagination">
+                <a href="index.html" class="page-btn page-active">1</a>
+                <a href="page2.html" class="page-btn">2</a>
+                <a href="page3.html" class="page-btn">3</a>
+                <a href="page2.html" class="page-btn">Next &raquo;</a>
+            </div>
+    </main>
+
+   <!-- =========================================
+         JAVASCRIPT LOGIC (Menu, Search, & Popups)
+         ========================================= -->
+    <script>
+        // --- 1. HAMBURGER MENU LOGIC ---
+        const sidebar = document.getElementById('sidebarMenu');
+        const menuToggleBtn = document.getElementById('menuToggleBtn');
+        const closeBtn = document.getElementById('closeBtn');
+
+        menuToggleBtn.addEventListener('click', () => { sidebar.classList.add('active'); });
+        closeBtn.addEventListener('click', () => { sidebar.classList.remove('active'); });
+
+
+        // --- 2. SEARCH BAR LOGIC ('ENTER' KEY) ---
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const query = event.target.value.toLowerCase();
+                const movieCards = document.querySelectorAll('.movie-card');
+                movieCards.forEach(card => {
+                    const title = card.querySelector('.movie-title').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        card.style.display = "block"; 
+                    } else {
+                        card.style.display = "none";  
+                    }
+                });
+            }
+        });
+
+
+        // --- 3. "COMING SOON" POPUP LOGIC ---
+        const downloadButtons = document.querySelectorAll('.download-links .btn');
+
+        downloadButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                const link = this.getAttribute('href');
+                if (link === '#' || link === '' || !link) {
+                    event.preventDefault(); 
+                    alert('Coming soon!'); 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
