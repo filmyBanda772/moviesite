@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Home Page -->
+  <url>
+    <loc>https://filmybanda772.github.io/moviesite/</loc>
+    <priority>1.0</priority>
+  </url>
+  <!-- Bollywood Page -->
+  <url>
+    <loc>https://filmybanda772.github.io/moviesite/bollywood.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Hollywood Page -->
+  <url>
+    <loc>https://filmybanda772.github.io/moviesite/hollywood.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Web Series Page -->
+  <url>
+    <loc>https://filmybanda772.github.io/moviesite/web-series.html</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
