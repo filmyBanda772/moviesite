@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Fast Server</title>
+    <style>
+        body { background-color: #121212; color: #ffffff; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .server-container { background-color: #1e1e1e; padding: 30px; border-radius: 10px; text-align: center; width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); border: 1px solid #333; }
+        .server-container h2 { margin-top: 0; margin-bottom: 25px; font-size: 1.2rem; color: #ff9800; }
+        .server-btn { display: block; width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; text-decoration: none; font-weight: bold; color: #fff; box-sizing: border-box; }
+        .btn-pixeldrain { background-color: #1a73e8; }
+        .btn-gofile { background-color: #0f9d58; }
+        .btn-streamtape { background-color: #d84315; }
+        .btn-doodstream { background-color: #00838f; }
+    </style>
+</head>
+<body>
+    <div class="server-container">
+        <h2>⚡ Choose Download Server</h2>
+        <a href="#" class="server-btn btn-pixeldrain" target="_blank">Pixeldrain</a>
+        <a href="#" class="server-btn btn-gofile" target="_blank">Gofile</a>
+        <a href="#" class="server-btn btn-streamtape" target="_blank">Streamtape</a>
+        <a href="#" class="server-btn btn-doodstream" target="_blank">Doodstream</a>
+    </div>
+    <script>
+        const movieLinks = {
+            "avatar": {
+                pixeldrain: "https://pixeldrain.com/u/avatar_link",
+                gofile: "https://gofile.io/d/avatar_link",
+                streamtape: "https://streamtape.com/v/avatar_link",
+                doodstream: "https://dood.re/d/avatar_link"
+            },
+            "ironman": {
+                pixeldrain: "https://pixeldrain.com/u/ironman_link",
+                gofile: "https://gofile.io/d/ironman_link",
+                streamtape: "https://streamtape.com/v/ironman_link",
+                doodstream: "https://dood.re/d/ironman_link"
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = urlParams.get('id');
+
+        if (movieId && movieLinks[movieId]) {
+            document.querySelector('.btn-pixeldrain').href = movieLinks[movieId].pixeldrain;
+            document.querySelector('.btn-gofile').href = movieLinks[movieId].gofile;
+            document.querySelector('.btn-streamtape').href = movieLinks[movieId].streamtape;
+            document.querySelector('.btn-doodstream').href = movieLinks[movieId].doodstream;
+        } else {
+            alert("Movie links not found!");
+        }
+    </script>
+</body>
+</html>
