@@ -170,8 +170,9 @@
             <ul>
                 <li><a href="hollywood.html">⭐ Hollywood Movies</a></li>
                 <li><a href="bollywood.html">⭐ Bollywood Movies</a></li>
-                <li><a href="dual-audio.html">⭐ Dual Audio</a></li>
+                <li><a href="South-Hindi dubbed.html">⭐ South Hindi Dubbed</a></li>
                 <li><a href="web-series.html">⭐ Web Series</a></li>
+                <li><a href="https://anime website link" target="_blank">⭐ Anime</a></li>
             </ul>
         </div>
     </aside>
@@ -271,6 +272,18 @@
                     }
                 });
             }
+        });
+                // --- 3. "COMING SOON" POPUP LOGIC ---
+        const downloadButtons = document.querySelectorAll('.download-links .btn');
+
+        downloadButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                const link = this.getAttribute('href');
+                if (link === '#' || link === '' || !link) {
+                    event.preventDefault(); 
+                    alert('Coming soon!'); 
+                }
+            });
         });
               <!-- ================= JAVASCRIPT ANIMATION ================= -->
         document.addEventListener("DOMContentLoaded", function() {
