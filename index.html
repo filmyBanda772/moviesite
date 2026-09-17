@@ -114,7 +114,8 @@
            ========================================= */
         .movies-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; }
 
-        .movie-card { background-color: #1e1e1e; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); transition: transform 0.3s ease; }
+        .movie-card { background-color: #1e1e1e; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); opacity: 0; transform: translateY(40px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+        .movie-card.show { opacity: 1; transform: translateY(0); }
         .movie-card:hover { transform: translateY(-8px); }
         .movie-card img { width: 100%; height: 300px; object-fit: cover; border-bottom: 3px solid #333; }
         
@@ -328,7 +329,7 @@
                     <div class="movie-year">2026 2H 42M • Crime/Thriller/Drama</div>
                     <div class="download-links">
                         <a href="fast-server.html?id=udaipur" class="btn-fast" target="_blank" style="background-color: #ff9800; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">⚡ Fast Server</a>
-                        <a href="" class="btn btn-mega" target="_blank">Mega.nz</a>
+                        <a href="https://mega.nz/file/ig4F3ZSK#_ncvzbABq9udoQnWk3gK_y_t_4hLFRGTglnnFx_D1Yc" class="btn btn-mega" target="_blank">Mega.nz</a>
                         <a href="#" class="btn btn-telegram" target="_blank">Terabox</a>
                     </div>
                 </div>
@@ -511,6 +512,28 @@
                 }
             });
         });
+      <!-- ================= JAVASCRIPT ANIMATION ================= -->
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.movie-card');
+            
+            // Intersection Observer (check that card is shown in screen or not)
+            const observer = new IntersectionObserver((entries) => {
+                let delay = 0;
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // single card (150ms gap) load karne ka logic
+                        setTimeout(() => {
+                            entry.target.classList.add('show');
+                        }, delay);
+                        delay += 150; // next card ke liye 150ms extra
+                        observer.unobserve(entry.target); // single time load 
+                    }
+                });
+            }, { threshold: 0.1 }); // card load when 10% is shown 
+
+            //  (Observer) for all cards
+            cards.forEach(card => observer.observe(card));
+        });  
     </script>
     <script src="https://mausoleumpoetrywrench.com/2d/a9/44/2da944a44cf8a74f8394df6b94237657.js"></script>
 </body>
