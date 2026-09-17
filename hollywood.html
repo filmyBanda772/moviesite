@@ -169,9 +169,53 @@
         .btn-mega { background-color: #D9272E; }
         .btn-telegram { background-color: #0088cc; }
 
+                /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .main-content { padding: 20px; }
+            .main-content { padding: 15px; }
+            .top-header { flex-direction: column; align-items: flex-start; }
+            .search-bar { max-width: 100%; margin-top: 10px; }
+            /* Mobile 2 card view */
+            .movies-container { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;}
+        /* height for poster in mobile */
+        .movie-card img { 
+        height: 200px;}
+        /* Tile Size for mobile*/
+        .movie-title {
+        font-size: 0.85rem;
+         }
         }
+    /* =========================================
+           7. Pagination Bar Styling
+           ========================================= */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        .page-btn {
+            background-color: #222;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border: 1px solid #333;
+        }
+        .page-btn:hover {
+            background-color: #00bcd4;
+            color: #000;
+        }
+        .page-active {
+            background-color: #00bcd4;
+            color: #000;
+            border: 1px solid #00bcd4;
+        } 
     </style>
 </head>
 <body>

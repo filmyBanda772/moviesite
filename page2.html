@@ -131,11 +131,22 @@
         .btn-mega { background-color: #D9272E; }
         .btn-telegram { background-color: #0088cc; }
 
-        /* Mobile Responsiveness */
+          /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .main-content { padding: 15px; }
             .top-header { flex-direction: column; align-items: flex-start; }
             .search-bar { max-width: 100%; margin-top: 10px; }
+            /* Mobile 2 card view */
+            .movies-container { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;}
+        /* height for poster in mobile */
+        .movie-card img { 
+        height: 200px;}
+        /* Tile Size for mobile*/
+        .movie-title {
+        font-size: 0.85rem;
+         }  
         }
     /* =========================================
            7. Pagination Bar Styling
