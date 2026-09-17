@@ -135,6 +135,17 @@
             .main-content { padding: 15px; }
             .top-header { flex-direction: column; align-items: flex-start; }
             .search-bar { max-width: 100%; margin-top: 10px; }
+            /* Mobile 2 card view */
+            .movies-container { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;}
+        /* height for poster in mobile */
+        .movie-card img { 
+        height: 200px;}
+        /* Tile Size for mobile*/
+        .movie-title {
+        font-size: 0.85rem;
+         }
         }
     /* =========================================
            7. Pagination Bar Styling
@@ -189,9 +200,9 @@
             <ul>
                 <li><a href="hollywood.html">⭐ Hollywood Movies</a></li>
                 <li><a href="bollywood.html">⭐ Bollywood Movies</a></li>
-                <li><a href="dual-audio.html">⭐ Dual Audio</a></li>
                 <li><a href="web-series.html">⭐ Web Series</a></li>
-                <li><a href="South-Hindi dubbed.html">⭐ South Hindi Dubbed</a></li>
+                <li><a href="South-Hindi dubbed.html">⭐South Hindi Dubbed</a></li>
+                <li><a href="https://anime website link" target="_blank">⭐ Anime</a></li>
             </ul>
         </div>
     </aside>
@@ -215,6 +226,18 @@
         <!-- Movies Grid -->
         <div class="movies-container">
             <div class="movie-card">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQFYoZfochJGGl9LQUsonrGIwcffSXEuCjcbn6VyKSNqkxIpuy1" alt="Poster" loading="lazy">
+                <div class="movie-info">
+                    <div class="movie-title"> I am Legend </div>
+                    <div class="movie-year">2007 1H41m • Horror/Action</div>
+                    <div class="download-links">
+                        <a href="fast-server.html?id=legend" class="btn-fast" target="_blank" style="background-color: #ff9800; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">⚡ Fast Server</a>
+                        <a href="https://mega.nz/file/uw4zWZJY#k2wy_5_nMx9Om0OCuXy36u7DW631LHMTZX97sPJ77to" class="btn btn-mega" target="_blank">Mega.nz</a>
+                        <a href="#" class="btn btn-telegram" target="_blank">Terabox</a>
+                    </div>
+                </div>
+            </div>  
+            <div class="movie-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjvmyTzZf3sMMr1IH2gCx-W8mE3hN8ZvuJyqglsAMxsQ&s=10" alt="Poster" loading="lazy">
                 <div class="movie-info">
                     <div class="movie-title"> Haiwaan </div>
@@ -225,7 +248,19 @@
                         <a href="https://1024terabox.com/s/1CkTFK2s8x03nvv-stcWs1A" class="btn btn-telegram" target="_blank">Terabox</a>
                     </div>
                 </div>
-            </div>   
+            </div> 
+            <div class="movie-card">
+                <img src="https://resizing.flixster.com/exdvKorWhA3Zddx7FMq8FtKXdKY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p33778324_v_v12_aa.jpg" alt="Poster" loading="lazy">
+                <div class="movie-info">
+                    <div class="movie-title"> Vishwanath & Sons </div>
+                    <div class="movie-year">2026 2H 41m • Romance/Drama</div>
+                    <div class="download-links">
+                        <a href="fast-server.html?id=vishwanath" class="btn-fast" target="_blank" style="background-color: #ff9800; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">⚡ Fast Server</a>
+                        <a href="https://mega.nz/file/7txAjDSY#nHPaYki7Qifpvv84Ux6BGQh6oPLhsEcOa38IT3l28zs" class="btn btn-mega" target="_blank">Mega.nz</a>
+                        <a href="#" class="btn btn-telegram" target="_blank">Terabox</a>
+                    </div>
+                </div>
+            </div>     
              <div class="movie-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO0XfTLPGdQKYDFRR0pdN5T2HCqoHfb-znhRaG6VhUzw&s=10" alt="Poster" loading="lazy">
                 <div class="movie-info">
@@ -261,7 +296,19 @@
                         <a href="https://1024terabox.com/s/16kiXmegmMoEBBWnoroSmtA" class="btn btn-telegram" target="_blank">Terabox</a>
                     </div>
                 </div>
-            </div>   
+            </div> 
+              <div class="movie-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlGjvuW6F1VnL03dJrTk9-x3d1Tp8WibudXvWWW9hWQA&s=10" alt="Poster" loading="lazy">
+                <div class="movie-info">
+                    <div class="movie-title"> DC </div>
+                    <div class="movie-year">2026 2H 30M •Romance/Adventure </div>
+                    <div class="download-links">
+                        <a href="fast-server.html?id=dcsouth" class="btn-fast" target="_blank" style="background-color: #ff9800; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">⚡ Fast Server</a>
+                        <a href="https://mega.nz/file/W9hhXD4Z#az_4Xiex5xQQgZV_16xcPaYy3X9i3ORwX0uDxLVO-EQ" class="btn btn-mega" target="_blank">Mega.nz</a>
+                        <a href="#" class="btn btn-telegram" target="_blank">Terabox </a>
+                    </div>
+                </div>
+            </div>
              <div class="movie-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkd3oDAVwJLqssb4QD4WZyi6nh8OlrkkyihPqeGAehiw&s=10" alt="Poster" loading="lazy">
                 <div class="movie-info">
@@ -361,7 +408,7 @@
                     <div class="movie-year">2024 • Comedy/Horror</div>
                     <div class="download-links">
                         <a href="fast-server.html?id=yourmoviename" class="btn-fast" target="_blank" style="background-color: #ff9800; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">⚡ Fast Server</a>
-                        <a href="https://mega.nz/file/12345" class="btn btn-mega" target="_blank">Mega.nz</a>
+                        <a href="#" class="btn btn-mega" target="_blank">Mega.nz</a>
                         <a href="terabox link" class="btn btn-telegram" target="_blank">Terabox</a>
                     </div>
                 </div>
@@ -375,7 +422,7 @@
                     <div class="movie-year">2011 • Comedy/Horror</div>
                     <div class="download-links">
                         <a href="fast-server.html?id=yourmoviename" class="btn-fast" target="_blank" style="background-color: #ff9800; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">⚡ Fast Server</a>
-                        <a href="https://mega.nz/file/12345" class="btn btn-mega" target="_blank">Mega.nz</a>
+                        <a href="#" class="btn btn-mega" target="_blank">Mega.nz</a>
                         <a href="terabox link" class="btn btn-telegram" target="_blank">Terabox</a>
                     </div>
                 </div>
