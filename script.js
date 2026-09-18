@@ -1,61 +1,65 @@
-document.addEventListener("DOMContentLoaded", function() {
-    
-    // ==========================================
-    // 1. LAZY LOADING & SCROLL ANIMATION
-    // ==========================================
-    const cards = document.querySelectorAll('.movie-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        let delay = 0;
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('show');
-                }, delay);
-                delay += 150; // 150ms staggered effect
-                observer.unobserve(entry.target);
+
+        
+       
+        // --- 1. HAMBURGER MENU LOGIC ---
+        const sidebar = document.getElementById('sidebarMenu');
+        const menuToggleBtn = document.getElementById('menuToggleBtn');
+        const closeBtn = document.getElementById('closeBtn');
+
+        menuToggleBtn.addEventListener('click', () => { sidebar.classList.add('active'); });
+        closeBtn.addEventListener('click', () => { sidebar.classList.remove('active'); });
+
+        // --- 2. SEARCH BAR LOGIC ('ENTER' KEY) ---
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const query = event.target.value.toLowerCase();
+                const movieCards = document.querySelectorAll('.movie-card');
+                movieCards.forEach(card => {
+                    const title = card.querySelector('.movie-title').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        card.style.display = "block"; 
+                    } else {
+                        card.style.display = "none";  
+                    }
+                });
             }
         });
-    }, { threshold: 0.1 });
 
-    cards.forEach(card => observer.observe(card));
+        // --- 3. "COMING SOON" POPUP LOGIC ---
+        const downloadButtons = document.querySelectorAll('.download-links .btn');
 
-    // ==========================================
-    // 2. "COMING SOON" POPUP LOGIC
-    // ==========================================
-    // यह कोड वेबसाइट के किसी भी ऐसे लिंक को पकड़ेगा जिसमें # लगा हो या खाली हो
-    const allLinks = document.querySelectorAll('a');
-    
-    allLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            const href = this.getAttribute('href');
-            // अगर लिंक खाली है या सिर्फ '#' है
-            if (href === '#' || href === '' || !href) {
-                event.preventDefault(); // पेज को ऊपर जाने से रोकेगा
-                alert('Coming soon!'); // पॉपअप दिखाएगा
-            }
-        });
-    });
-
-    // ==========================================
-    // 3. SEARCH BAR LOGIC (अगर तुमने सर्च बॉक्स लगाया है तो)
-    // ==========================================
-    // ध्यान दें: तुम्हारे HTML में सर्च बॉक्स की ID 'searchInput' होनी चाहिए
-    const searchInput = document.getElementById('searchInput');
-    
-    if (searchInput) {
-        searchInput.addEventListener('keyup', function() {
-            const filter = searchInput.value.toLowerCase();
-            
-            cards.forEach(card => {
-                const title = card.querySelector('.movie-title').innerText.toLowerCase();
-                if (title.includes(filter)) {
-                    card.style.display = ""; // अगर नाम मैच हुआ तो दिखाओ
-                } else {
-                    card.style.display = "none"; // नहीं हुआ तो छिपा दो
+        downloadButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                const link = this.getAttribute('href');
+                if (link === '#' || link === '' || !link) {
+                    event.preventDefault(); 
+                    alert('Coming soon!'); 
                 }
             });
         });
-    }
+     
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.movie-card');
+            
+            // Intersection Observer (check that card is shown in screen or not)
+            const observer = new IntersectionObserver((entries) => {
+                let delay = 0;
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // single card (150ms gap) load karne ka logic
+                        setTimeout(() => {
+                            entry.target.classList.add('show');
+                        }, delay);
+                        delay += 150; // next card ke liye 150ms extra
+                        observer.unobserve(entry.target); // single time load 
+                    }
+                });
+            }, { threshold: 0.1 }); // card load when 10% is shown 
 
-});
+            //  (Observer) for all cards
+            cards.forEach(card => observer.observe(card));
+        });  
+    
+
