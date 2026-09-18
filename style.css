@@ -259,34 +259,37 @@ body {
     } 
 } 
 
-/* ========================================= 7. Pagination Bar Styling ========================================= */ 
-.pagination { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    margin-top: 40px; 
-    margin-bottom: 20px; 
-    gap: 10px; 
-} 
+/* =========================================
+   8. PAGINATION BUTTONS
+========================================= */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
 
-.page-btn { 
-    background-color: #222; 
-    color: #fff; 
-    text-decoration: none; 
-    padding: 10px 15px; 
-    border-radius: 5px; 
-    font-weight: bold; 
-    transition: background-color 0.3s; 
-    border: 1px solid #333; 
-} 
+.pagination a {
+    background-color: #222;
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
 
-.page-btn:hover { 
-    background-color: #00bcd4; 
-    color: #000; 
-} 
+.pagination a:hover {
+    background-color: #444;
+}
 
-.page-active { 
-    background-color: #00bcd4; 
-    color: #000; 
-    border: 1px solid #00bcd4; 
+/* Jo page open hai uska color (Cyan/Blue) */
+.pagination a.active {
+    background-color: #00c3d9; 
+    color: black;
+    border-color: #00c3d9;
 }
