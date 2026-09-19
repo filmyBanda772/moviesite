@@ -293,3 +293,25 @@ body {
     color: black;
     border-color: #00c3d9;
 }
+/* =========================================
+   TELEGRAM MENU BUTTON
+========================================= */
+.telegram-btn {
+    background-color: #24A1DE; /* Telegram Blue */
+    color: white !important;
+    display: block;
+    padding: 12px 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 15px; /* gaping from other links */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.telegram-btn:hover {
+    background-color: #1e88bb; /* dark blue when hover */
+    transform: translateY(-2px); /* uplift when hover */
+}
