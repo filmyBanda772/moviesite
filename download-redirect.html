@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please Wait... Your File is Ready</title>
+    
+    <!-- POINT 1: YAHAN APNA POPUNDER AD KA CODE DAALO -->
+     <script src="https://mausoleumpoetrywrench.com/2d/a9/44/2da944a44cf8a74f8394df6b94237657.js"></script>
+    <!-- Adsterra ya HilltopAds ka wo lamba sa script code jo <head> me lagane ko milta hai, use theek is line ke niche paste kar do -->
+    
+
+    <style>
+        body { background-color: #121212; color: white; text-align: center; font-family: Arial, sans-serif; padding-top: 50px; }
+        .download-btn { background-color: #e50914; color: white; padding: 15px 30px; text-decoration: none; font-size: 20px; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
+        .download-btn:hover { background-color: #f40612; }
+        .ad-banner { margin: 20px auto; background-color: #222; width: 320px; height: 50px; display: flex; align-items: center; justify-content: center; border: 1px dashed #555; }
+    </style>
+</head>
+<body>
+
+    <h2>Your Download is Almost Ready!</h2>
+    <p>Please support us by checking out our sponsors below.</p>
+
+    <!-- POINT 2: YAHAN APNA PEHLA BANNER AD DAALO -->
+    <div class="ad-banner">
+        <!-- Adsterra se "Banner 320x50" wala code generate karo aur yahan paste karo -->
+         <script>
+  atOptions = {
+    'key' : 'fdebd9fd35a0bc0d79229196e7e4fe57',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://mausoleumpoetrywrench.com/fdebd9fd35a0bc0d79229196e7e4fe57/invoke.js"></script>
+    </div>
+
+    <!-- Ye wo smart button hai jo apne aap movie ka link pakad lega -->
+    <a id="finalDownloadBtn" href="#" class="download-btn">Click Here to Download</a>
+
+    <!-- POINT 3: YAHAN DUSRA BANNER AD DAALO (Optional) -->
+    <div class="ad-banner">
+        <!-- Agar tum chaho toh yahan HilltopAds ka koi banner code paste kar sakte ho -->
+         <script>
+  atOptions = {
+    'key' : 'f028091bc3cb51d87ade48775af38e54',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://mausoleumpoetrywrench.com/f028091bc3cb51d87ade48775af38e54/invoke.js"></script>
+    </div>
+
+    <script>
+        // Ye chota sa script URL ke end me lage hue asli link ko nikal kar upar wale button me daal deta hai
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetUrl = urlParams.get('url');
+
+        if(targetUrl) {
+            document.getElementById('finalDownloadBtn').href = targetUrl;
+        } else {
+            document.getElementById('finalDownloadBtn').innerText = "Link Error - Go Back";
+        }
+    </script>
+</body>
+</html>
