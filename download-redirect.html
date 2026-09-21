@@ -52,6 +52,20 @@
     
     <!-- Scroll Text (Jab continue dabega tab ye dikhega) -->
     <p id="scrollMessage">✅ Verified! Please scroll down to the bottom for your link ⬇️</p>
+    <!-- NAYA AD BOX 1: 468x60 -->
+    <div class="ad-banner" style="width: 468px; height: 60px;">
+        <!--isme 468x60 ka code paste karna hai -->
+        <script>
+  atOptions = {
+    'key' : 'c1df239ab6fac179543cb086e4314511',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
+</script>
+<script src="https://mausoleumpoetrywrench.com/c1df239ab6fac179543cb086e4314511/invoke.js"></script>
+    </div>
 
     <!-- POINT 3: DUSRA BANNER AD (Beech mein) -->
     <div class="ad-banner" style="height: 250px;">
@@ -71,6 +85,20 @@
     <!-- Ye area page ko lamba karega taaki user scroll kare -->
     <div class="spacer">
         <p>Scrolling down...</p>
+        <!-- NAYA AD BOX 2: 160x300 -->
+        <div class="ad-banner" style="width: 160px; height: 300px;">
+            <!-- isme 160x300 ka code paste karna hai -->
+            <script>
+  atOptions = {
+    'key' : 'd19352574af82b9717d9b9fd2d192723',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://mausoleumpoetrywrench.com/d19352574af82b9717d9b9fd2d192723/invoke.js"></script>
+        </div>
         
         <!-- POINT 4: TEESRA BANNER AD -->
         <div class="ad-banner">
@@ -115,18 +143,27 @@
             finalBtn.style.backgroundColor = "gray";
         }
 
-        // Continue Button ka magic
-        document.getElementById('continueBtn').addEventListener('click', function() {
-            // Button ko chupao
-            this.style.display = 'none';
-            // Scroll message dikhao
-            document.getElementById('scrollMessage').style.display = 'block';
-            // Sabse niche wala download section on karo
-            document.getElementById('bottomSection').style.display = 'block';
-            
-            // User ko thoda sa niche scroll karwao taaki use pata chale ki aage badhna hai
-            window.scrollBy({ top: 300, behavior: 'smooth' });
+        // --- NAYA INVISIBLE POPUNDER TRICK ---
+        let adClicked = false; // Ek nishani jo yaad rakhegi ki ad khula ya nahi
+
+        document.getElementById('continueBtn').addEventListener('click', function(e) {
+            if (adClicked === false) {
+                // PEHLA CLICK: Adsterra ka Direct Link naye tab me khulega
+                // Niche wali line mein apna Adsterra ka Direct Link daalna hai (Quotes ' ' ke andar)
+                window.open('https://mausoleumpoetrywrench.com/v41vpmfjek?key=919855f141d098f06c83a0b64cd7e643', '_blank');
+                
+                adClicked = true; // Ab ise true kar diya, taaki agli baar ad na khule
+            } else {
+                // DUSRA CLICK: Asli kaam hoga (Page aage badhega aur button chup jayega)
+                this.style.display = 'none';
+                document.getElementById('scrollMessage').style.display = 'block';
+                document.getElementById('bottomSection').style.display = 'block';
+                
+                // User ko thoda sa niche scroll karwao
+                window.scrollBy({ top: 300, behavior: 'smooth' });
+            }
         });
+    </script>
     </script>
     <!--  [Adsterra social bar Ad 2]-->
          <script src="https://mausoleumpoetrywrench.com/d9/e8/88/d9e888d9286688250c2d311ade158943.js"></script>
