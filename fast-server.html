@@ -14,7 +14,6 @@
         .btn-streamtape { background-color: #d84315; }
         .btn-doodstream { background-color: #00838f; }
     </style>
-    <script src="https://mausoleumpoetrywrench.com/2d/a9/44/2da944a44cf8a74f8394df6b94237657.js"></script>
 </head>
 <body>
     <div class="server-container">
@@ -156,5 +155,21 @@
         }
     </script>
      <script src="https://mausoleumpoetrywrench.com/d9/e8/88/d9e888d9286688250c2d311ade158943.js"></script>
+     <!-- --- GLOBAL SMART POPUNDER TRICK (For Fast Server) --- -->
+    <script>
+        let fastServerAdClicked = false; // Check karne ke liye ki ad khula ya nahi
+
+        // Poore page par kahin bhi click hone ko monitor karega
+        document.body.addEventListener('click', function() {
+            if (fastServerAdClicked === false) {
+                // PEHLA CLICK: Direct Link naye tab mein khulega
+                // Niche wali line mein apna Adsterra ka Direct Link daalna hai
+                window.open('https://mausoleumpoetrywrench.com/v41vpmfjek?key=919855f141d098f06c83a0b64cd7e643', '_blank');
+                
+                // Ad khulne ke baad isko true kar do, taaki dobara na khule
+                fastServerAdClicked = true; 
+            }
+        });
+    </script>
 </body>
 </html>
