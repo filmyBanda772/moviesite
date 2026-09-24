@@ -12,7 +12,7 @@
         .btn-pixeldrain { background-color: #1a73e8; }
         .btn-gofile { background-color: #0f9d58; }
         .btn-streamtape { background-color: #d84315; }
-        .btn-doodstream { background-color: #00838f; }
+        .btn-mixdrop { background-color: #00838f; }
     </style>
 </head>
 <body>
@@ -26,8 +26,8 @@
     </div>
         <a href="#" class="server-btn btn-pixeldrain" target="_blank">Pixeldrain(1080p)</a>
         <a href="#" class="server-btn btn-gofile" target="_blank">Gofile(720p)</a>
-        <a href="#" class="server-btn btn-streamtape" target="_blank">Streamtape</a>
-        <a href="#" class="server-btn btn-doodstream" target="_blank">Mixdrop</a>
+        <a href="#" class="server-btn btn-streamtape" target="_blank">Streamtape(1080p)</a>
+        <a href="#" class="server-btn btn-mixdrop" target="_blank">Mixdrop720(p)</a>
         <div style="margin-top: 15px; text-align: center;">
     <script type="text/javascript">
         atOptions = {
@@ -197,7 +197,7 @@
                 pixeldrain: "https://filmybanda772.github.io/moviesite/download-redirect.html?url=https://pixeldrain.com/u/RczYGrei",
                 gofile: "https://filmybanda772.github.io/moviesite/download-redirect.html?url=https://gofile.io/d/6HcJbk0M",
                 streamtape: "https://filmybanda772.github.io/moviesite/download-redirect.html?url=https://streamtape.com/v/qx0PWddXKRHKOB/T4e.C%40%21l.2o25.WEB-DL.720p.x264..Hindi.Eng.DD5.1.ESub.filmybanda.io.mkv.mp4",
-                mixdrop: "lhttps://filmybanda772.github.io/moviesite/download-redirect.html?url=https://mxdrop.sx/f/ow78lr6vf6pekq"
+                mixdrop: "https://filmybanda772.github.io/moviesite/download-redirect.html?url=https://mxdrop.sx/f/ow78lr6vf6pekq"
             },
              "iam": {
                 pixeldrain: "https://filmybanda772.github.io/moviesite/download-redirect.html?url=https://pixeldrain.com/u/7oPPpVFu",
@@ -214,7 +214,7 @@
             document.querySelector('.btn-pixeldrain').href = movieLinks[movieId].pixeldrain;
             document.querySelector('.btn-gofile').href = movieLinks[movieId].gofile;
             document.querySelector('.btn-streamtape').href = movieLinks[movieId].streamtape;
-            document.querySelector('.btn-doodstream').href = movieLinks[movieId].doodstream;
+            document.querySelector('.btn-mixdrop').href = movieLinks[movieId].mixdrop;
         } else {
             alert("Movie links not found!");
         }
