@@ -15,11 +15,7 @@
     <loc>https://filmybanda772.github.io/moviesite/hollywood.html</loc>
     <priority>0.8</priority>
   </url>
-  <!-- Web Series Page -->
-  <url>
-    <loc>https://filmybanda772.github.io/moviesite/web-series.html</loc>
-    <priority>0.8</priority>
-  </url>
+  
   <!-- South Hindi dubbed Page -->
   <url>
     <loc>https://filmybanda772.github.io/moviesite/South-Hindi-dubbed.html</loc>
