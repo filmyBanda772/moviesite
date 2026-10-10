@@ -315,3 +315,52 @@ body {
     background-color: #1e88bb; /* dark blue when hover */
     transform: translateY(-2px); /* uplift when hover */
 }
+/* Animebanda Buttons Styling */
+.anime-btn-container {
+    display: flex;
+    flex-direction: column; /* Mobile par upar-niche dikhane ke liye */
+    gap: 12px;
+    width: 90%;
+    max-width: 400px;
+    margin: 15px auto; /* Center karne aur search bar se gap dene ke liye */
+}
+
+.btn-anime-main, .btn-anime-series {
+    display: block;
+    padding: 12px 15px;
+    border-radius: 8px; /* Rounded corners */
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+}
+
+/* Pehle button ka color (Orange/Red theme) */
+.btn-anime-main {
+    background-color: #ff4500; 
+}
+.btn-anime-main:hover {
+    background-color: #cc3700;
+}
+
+/* Dusre button ka color (Blue theme) */
+.btn-anime-series {
+    background-color: #007bff;
+}
+.btn-anime-series:hover {
+    background-color: #0056b3;
+}
+
+/* PC (Bade screens) ke liye Settings */
+@media (min-width: 768px) {
+    .anime-btn-container {
+        flex-direction: row; /* PC par side-by-side dikhane ke liye */
+        max-width: 600px;
+    }
+    .btn-anime-main, .btn-anime-series {
+        flex: 1; /* Dono buttons ko barabar size ka banata hai */
+    }
+}
