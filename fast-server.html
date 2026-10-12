@@ -17,17 +17,30 @@
 </head>
 <body>
     <div class="server-container">
-        <h2>⚡ Choose Download Server</h2>
-         <!-- --- YAHAN APNA NATIVE BANNER CODE PASTE KARO --- -->
-    <div style="margin: 15px 0;">
-        <!-- Adsterra se mila hua Native Banner script yahan aayega -->
+        <!-- 1. FIXED TIMER BOX (Ye screen ke top center par chipka rahega) -->
+<div id="timerBox" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 2147483647 !important; text-align: center; color: #ffeb3b; font-size: 20px; font-weight: bold; padding: 15px 30px; background-color: rgba(0, 0, 0, 0.95); border-radius: 8px; border: 2px solid #ffeb3b; box-shadow: 0 0 20px rgba(0,0,0,1); width: 80%; max-width: 400px;">
+    Please wait <span id="countdown" style="color: white; font-size: 24px;">9</span> seconds...
+</div>
+
+<!-- Page Content (Isko thoda niche push kiya hai taaki heading timer ke peeche na chhupe) -->
+<div style="padding-top: 70px;">
+    <h2>⚡ Choose Download Server</h2>
+    
+    <!-- YAHAN APNA NAYA 1x3 YA 1x4 WALA NATIVE BANNER CODE PASTE KARO -->
+    <div style="margin: 20px auto; text-align: center; margin-bottom: 20px; width: 100%; overflow: hidden;">
+         <!-- Adsterra 1x4 script here -->
          <script async="async" data-cfasync="false" src="https://mausoleumpoetrywrench.com/83d49701eaeb6fa7a2cc25d20b3a43d5/invoke.js"></script>
          <div id="container-83d49701eaeb6fa7a2cc25d20b3a43d5"></div>
     </div>
+
+    <!-- 3. SERVER LINKS CONTAINER (Ye timer khatam hone par dikhega) -->
+    <div id="serverLinksContainer" style="display: none; margin-top: 30px; text-align: center;">
         <a href="#" class="server-btn btn-pixeldrain" target="_blank">Pixeldrain(1080p)</a>
         <a href="#" class="server-btn btn-gofile" target="_blank">Gofile(720p)</a>
         <a href="#" class="server-btn btn-streamtape" target="_blank">Streamtape(1080p)</a>
         <a href="#" class="server-btn btn-mixdrop" target="_blank">Mixdrop(720p)</a>
+    </div>
+</div>
         <div style="margin-top: 15px; text-align: center;">
     <script type="text/javascript">
         atOptions = {
@@ -329,5 +342,30 @@
             }
         });
     </script>
+
+    <script>
+    let timeLeft = 9;
+    const countdownElement = document.getElementById('countdown');
+    const timerBoxElement = document.getElementById('timerBox');
+    const linksContainerElement = document.getElementById('serverLinksContainer');
+
+    const timerInterval = setInterval(function() {
+        timeLeft--;
+        countdownElement.innerText = timeLeft;
+        
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            
+            // Timer ko gayab karo
+            timerBoxElement.style.display = 'none'; 
+            
+            // Server links ko show karo
+            linksContainerElement.style.display = 'block'; 
+            
+            // Ye code screen ko exact links ke center par smooth scroll kar dega
+            linksContainerElement.scrollIntoView({ behavior: 'smooth', block: 'center' }); 
+        }
+    }, 1000);
+</script>
 </body>
 </html>
