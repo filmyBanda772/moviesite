@@ -21,4 +21,13 @@
     <loc>https://filmybanda772.github.io/moviesite/South-Hindi-dubbed.html</loc>
     <priority>0.8</priority>
   </url>
+
+<url>
+<loc>https://filmybanda772.github.io/moviesite/fast-server.html</loc>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://filmybanda772.github.io/moviesite/download-redirect.html</loc>
+<priority>0.8</priority>
+</url>
 </urlset>
